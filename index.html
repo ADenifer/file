@@ -1,8 +1,15 @@
 <?php
-<!-- echo "This PHP script is running!"; -->
+// Get the root directory of the web server
+$rootPath = $_SERVER['DOCUMENT_ROOT'];
+// Specify the relative path to your resume file
+$relativePath = 'file:///C:/xampp/htdocs/Page/ArokiyaDeniferSResume.pdf';
+
+// Combine the root path with the relative path
+$resumePath = $rootPath . $relativePath;
+
 // Set the path to your resume file
-$resumePath = 'http://localhost:8080/Page/ArokiyaDeniferSResume.pdf';
-<a href="file:///C:/xampp/htdocs/Page/ArokiyaDeniferSResume.pdf" target="_blank">Direct Link to Resume</a>
+<!-- $resumePath = 'http://localhost:8080/Page/ArokiyaDeniferSResume.pdf';
+<a href="file:///C:/xampp/htdocs/Page/ArokiyaDeniferSResume.pdf" target="_blank">Direct Link to Resume</a> -->
 // Force download when the user clicks the link
 if (isset($_GET['download'])) {
     header('Content-Type: application/octet-stream');
